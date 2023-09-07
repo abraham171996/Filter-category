@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css"
+    rel="stylesheet"
+  />
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"
+  ></script>
+  <link rel="stylesheet" href="@sweetalert2/themes/dark/dark.css" />
+  <script defer src="sweetalert2/dist/sweetalert2.min.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="d-flex align-items-end justify-content-end px-2 mt-4">
+                <button href="index.html" target="_blank" type="button" class="btn btn-primary"
+                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+            GO HOME
+            </button>
+            </div>
+            <!-- Football News Modal -->
+        <div class="modal " id="football-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Football News</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Image</span>
+                            </div>
+                            <input type="text" name="football-image" id="football-image" class="form-control"
+                                aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
+                            </div>
+                            <input name="football-title" id="football-title" type="text" class="form-control"
+                                aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Description</span>
+                            </div>
+                            <input name="football-description" id="football-description" type="text"
+                                class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="save_football" class="save_all_items btn btn-primary room-save-btn">Save</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+        <!-- Football News Table -->
+        <div style="box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;margin-top: 100px; padding-top: 10px; border-radius: 4px;" class="container ">
+            <div class="card-title d-flex justify-content-center mt-4">
+                <h2>Football News</h2>
+            </div>
+            <div class="d-flex justify-content-end mb-4">
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#football-modal">Add News</button>
+            </div>
+            <table id="football-range" class="table">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">ImageUrl</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody class="football-body">
+
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Basketball News Modal -->
+        <div class="modal" id="basketball-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Basketball News</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Image</span>
+                            </div>
+                            <input type="text" name="basketball-image" id="basketball-image" class="form-control"
+                                aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
+                            </div>
+                            <input name="basketball-title" id="basketball-title" type="text" class="form-control"
+                                aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Description</span>
+                            </div>
+                            <input name="basketball-description" id="basketball-description" type="text"
+                                class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="save_basketball" class="save_all_items btn btn-primary room-save-btn">Save</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Basketball News Table -->
+        <div style="box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;margin-top: 100px; padding-top: 10px; border-radius: 4px;" class="container">
+            <div class="card-title d-flex justify-content-center mt-4">
+                <h2>Basketball News</h2>
+            </div>
+            <div class="d-flex justify-content-end mb-5">
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#basketball-modal">Add News</button>
+            </div>
+            <table id="basketball-range" class="table">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">ImageUrl</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody class="basketball-body">
+
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tennis News Modal -->
+        <div class="modal" id="tennis-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Tennis News</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Image</span>
+                            </div>
+                            <input type="text" name="tennis-image" id="tennis-image" class="form-control"
+                                aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
+                            </div>
+                            <input name="tennis-title" id="tennis-title" type="text" class="form-control"
+                                aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Description</span>
+                            </div>
+                            <input name="tennis-description" id="tennis-description" type="text"
+                                class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="save_tennis" class="save_all_items btn btn-primary room-save-btn">Save</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!-- Tennis News Table -->
+        <div style="box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; margin-top: 100px; padding-top: 10px; border-radius: 4px;" class="container ">
+            <div class="card-title d-flex justify-content-center mt-4">
+                <h2>Tennis News</h2>
+            </div>
+            <div class="d-flex justify-content-end mb-5">
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#tennis-modal">Add News</button>
+            </div>
+            <table id="tennis-range" class="table">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">ImageUrl</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody class="tennis-body">
+
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </main>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../src/js/admin.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  list-style: none;
+  border: none;
+}
+
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: flex !important;
+}
+
+body {
+  background-color: #f39c11;
+}
+
+#banner {
+  width: 100%;
+  padding: 197px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+#banner .banner-top {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#banner .banner-top select {
+  width: 185px;
+  height: 27px;
+  border: none;
+  border-radius: 3px;
+  padding-left: 5px;
+  background-color: #2d3f50;
+  color: #f2fef9;
+}
+#banner .banner-top .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#banner .banner-top .right input {
+  padding-left: 5px;
+  width: 200px;
+  height: 27px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+#banner .banner-top .right button {
+  padding-left: 5px;
+  width: 55px;
+  height: 27px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background-color: #2d3f50;
+  color: #f2fef9;
+  font-size: 12px;
+}
+#banner .banner-bottom {
+  margin-top: 50px;
+}
+#banner .banner-bottom .cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+#banner .banner-bottom .cards .card {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 100%;
+  background-color: #f2fef9;
+  border-radius: 12px;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+#banner .banner-bottom .cards .card:hover {
+  transform: scale(1.05);
+}
+#banner .banner-bottom .cards .card figure {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+#banner .banner-bottom .cards .card figure img {
+  width: 150px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 3px;
+}/*# sourceMappingURL=style.css.map */
